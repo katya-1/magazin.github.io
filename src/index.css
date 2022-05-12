@@ -1,0 +1,365 @@
+body {
+  margin: 0;
+  font-family: 'Inter',system-ui;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(236, 204, 163);
+}
+.wrapper{
+  background: rgb(247 243 236);
+  box-shadow: 9px 10px 20px rgb(0, 0, 0,0.04);
+  border-radius: 20px;
+  max-width: 1580px;
+  margin: 50px auto;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items:center ;
+  padding: 40px;
+  border-bottom: 2px solid rgb(236, 204, 163);
+}
+.headerLeft{
+  display: flex;
+  align-items:center;
+}
+div.headerLeft img{
+  margin-right: 15px;
+}
+div.headerInfo  h3{
+  text-transform: uppercase;
+}
+div.headerInfo  h3,
+div.headerInfo  p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+li{
+  list-style-type: none ;
+}
+li.basket{
+  margin-right: 30px;
+}
+header img{
+  margin-right: 15px;
+}
+.content{
+  padding: 40px;
+}
+li.menu-item{
+  margin: 15px 15px 40px 0;
+}
+.menu-link h2{
+  margin: 0;
+}
+.menu-link{
+  text-decoration:none; /*Убираем стандартное подчёркивание ссылки если оно ещё не убрано*/
+  display: inline-block; /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный*/
+  line-height: 1; /*Задаём высоту строки (можно в пикселях)*/
+  color:#04080cd2;
+}
+.menu-link:hover{
+  color: #000;
+}
+.menu-link:after {
+  display: block; /*превращаем его в блочный элемент*/
+  content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+  height: 2px; /*задаём высоту линии*/
+  width: 0%; /*задаём начальную ширину элемента (линии)*/
+  background-color: #040507; /*цвет фона элемента*/
+  transition: width 0.4s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/  
+}
+.menu-link:hover:after {
+  width: 100%;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+.card{
+  border: 1px solid #dbbc94;
+  padding: 30px;
+  width: 170px;
+  border-radius: 40px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 19px 30px 0;
+  transition: box-shadow 0.2s ease-in-out, transorm box-shadow 0.2s ease-in-out;
+ }
+.card:hover{
+  box-shadow: 0px 20px 35px rgba(0,0,0,0.07);
+  transform: translateY(-5px);
+}
+.imgRing{
+  margin: 0 auto;
+  height: auto;
+  width: 135px;
+}
+.favorite{
+  cursor: pointer;
+}
+.cardBottom{
+  display: flex;
+  justify-content:space-between;
+}
+.cardInfo{
+  display: flex;
+  flex-direction: column;
+}
+.card span{
+  font-size: 13px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.card b{
+  font-size: 13px;
+}
+.button{
+  background: #eccca3;
+  border:1px solid rgb(221 176 120);;
+  box-sizing:border-box;
+  border-radius:8px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+h5{
+  font-weight: 400;
+  font-size: 14px;
+}
+.card-decorations{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card-decorations-on{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.overlay{
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index:1;
+}
+
+.drawer{
+  position: absolute;
+  width: 420px;
+  height: 100%;
+  right:0;
+  background: #fff;
+  box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgb(247 243 236); */
+}
+.drawer h2{
+  margin: 0;
+  font-size: 24px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content:space-between;
+}
+.items{
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 40px;
+}
+.cartTotalBlock{
+  margin: 0 0 60px;;
+}
+.cartTotalBlock ul{
+  display: block;
+  margin-bottom: 40px;
+}
+.cartTotalBlock li{
+  display: flex;
+  margin-bottom: 20px;
+}
+.cartTotalBlock li div{
+  flex: 1;
+  border-bottom: 1px dashed #DFDFDF;
+  position: relative;
+  top: -4px;
+  margin: 0 7px;
+}
+button.nudeButton{
+  width: 100%;
+  border-radius: 18px;
+  background: #f3bc84;
+  height: 55px;
+  border: 0;
+  font-size: 17px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+}
+button.nudeButton:hover{
+  background: rgb(233 171 93 / 60%);
+}
+button.nudeButton:active{
+  background: rgb(233 171 93 / 90%);
+}
+button.nudeButton:disabled {
+  background-color: #bebebe !important;
+  cursor: default ;
+}
+.cartTotalBlock button.nudeButton{position: relative;}
+.cartTotalBlock button.nudeButton img {
+  position: absolute;
+  right: 30px;
+  top:20px;
+  transition: transform 0.15s ease-in-out; 
+}
+.cartTotalBlock button.nudeButton:hover img{
+  transform: translateX(5px);
+} 
+.cartItem{
+  display: flex;
+  align-items: center;
+  border: 1px solid #f3bc84;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+div.cartItem p{
+  font-size: 15px;
+}
+.imgINbacket{
+  margin-right: 20px;
+}
+.cartItem div{
+  margin-right: 20px;
+}
+.cartItem b{
+  font-size: 13px;
+}
+.removeBtn{
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+}
+.removeBtn:hover {
+  opacity: 1;
+}
+.cartEmpty{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex:auto;
+}
+.Empty{
+  margin-bottom: 20px;
+}
+.cartEmpty button.nudeButton img,
+.favorite-off button.nudeButton img{
+  position: relative;
+  top:1px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-right: 20px;
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+.cartEmpty button.nudeButton:hover img,
+.favorite-off button.nudeButton:hover img{
+  -webkit-transform: rotate(180deg) translateX(3px);
+  transform: rotate(180deg) translateX(3px);
+}input[type=text], input[type=password] {
+  width: 92%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.favorite-off{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.favorite-off p{
+  margin-top: 0px;
+}
+.nudeButton a{
+  color: #fff;
+}
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(236, 204, 163,37%);
+  margin: 0 -40px -40px;
+  padding-top: 10px;
+}
+p.foot{
+  border-bottom: 2px solid rgb(56, 56, 56,60%);
+  color: rgb(56, 56, 56,91%);
+  padding-bottom: 5px;
+}
+p.foot2{
+  border-top: 2px solid rgb(56, 56, 56,60%);
+  padding-top: 5px;
+  color: rgb(56, 56, 56,91%);
+  font-size: 15px;
+  font-weight: 500;
+}
+p.fg{
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.image-site{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+}
+.info2{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.info-text{
+  color: #f34256;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.info-image{
+  display: flex;
+  justify-content: center;
+}
+.info3{
+  display: flex;
+  flex-direction: row;
+}
+.cardOpinion{
+  border: 1px solid #dbbc94;
+    padding: 30px;
+    width: 95.5%;
+    border-radius: 40px;
+    display: flex;
+    margin: 30px 19px 30px 0;
+}
